@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="JS/index.js"></script>
+</head>
+<body>
+    <!--Pedir los numeros para las operaciones-->
+    Ingrese el primer numero<input type="number" id="Numero1"><br><br>
+    Ingrese el segundo numero<input type="number" id="Numero2"><br><br>
+    <!--selecionar operador-->
+    <select  id="operacion">
+        <option value="sumar">Sumar</option>
+        <option value="restar">Restar</option>
+        <option value="multiplicar">Multiplicar</option>
+        <option value="dividir">Dividir</option>
+    </select>
+    <!--boton para calcular y mostrar el resultado-->
+    <button onclick="calcular()">Calcular</button><br><br>
+    El resultado es : <input type="text" id="resultado" disabled>
+    
+</body>
+</html>
