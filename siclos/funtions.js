@@ -11,10 +11,6 @@ const showdatafor=()=>{
         Add+=numbres[i];
     }
     console.log("la suma es: "+Add)
-    //calcular el promedio y mostrarlo
-    //mostar la cantidad de pasres y la de inpares
-    //agregar en el html un boton para el for y otro para el foreach
-    //calcualr el promedio y mostrar los pares eh inpares por separado
     let promedio=Add/Numbres.length;
     console.log("el promedio es: "+promedio);
     let pares=0;
@@ -53,4 +49,15 @@ const ShosdataForeach=()=>{
         }    });
     console.log("la cantidad de pares es: "+pares);
     console.log("la cantidad de inpares es: "+inpares);
+}
+const mostrarProductosYPrecios=()=>{
+    let productos=["manzana","pera","naranja","platano"];
+    let precios=[10,20,30,40];
+    let daata="";
+    for (i=0; i<productos.length; i++){
+        console.log(precios[i]+" "+productos[i]);
+        daata+= "<tr><td>"+precios[i]+"</td><td>"+productos[i]+"</td></tr>";
+    }
+    
+    document.getElementById("tabla").innerHTML=daata;
 }
