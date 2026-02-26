@@ -10,11 +10,11 @@ formulario.addEventListener("submit", function(event) {
 
     if (validarCorreo(correo)) {
         mensaje.style.color = "green";
-        mensaje.textContent = "Correo válido. Enviando formulario...";
+        mensaje.textContent = "👍Correo válido. Enviando formulario";
         
     } else {
         mensaje.style.color = "red";
-        mensaje.textContent = "Por favor, ingresa un correo válido.";
+        mensaje.textContent = "👎Por favor, ingresa un correo válido";
     }
 });
 
