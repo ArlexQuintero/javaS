@@ -1,5 +1,5 @@
-
 const ValidarRecueri =()=>{
+    // traemos los datos del html
     const name = document.querySelector("#name").value.trim();
     const email = document.querySelector("#email").value.trim();
     const telefono = document.querySelector("#tel").value.trim();
@@ -8,14 +8,17 @@ const ValidarRecueri =()=>{
     const message = document.querySelector("#message");
     const result = document.querySelector("#result");
 
+    //iniciamos los mensajes para mostrar resultados
     message.innerHTML = "";
     result.innerHTML = "";
 
+    //instaseamos las validadciones 
     let regexNombre = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
     let regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     let regexTelefono = /^\d{10}$/;
     let regexPassword = /^(?=.*\d).{8,}$/;
 
+    //validar con lo que trae el html
     if (name === "" || email === "" || telefono ==="" || password ===""){
         message.innerHTML = "❎Error: Todos los campos son obligatorios";
         
@@ -41,6 +44,7 @@ const ValidarRecueri =()=>{
         
         return;
     }
+    //si todo esta correcto mostrar este mensaje 
     message.innerHTML = "✅ Registro exitoso";
     result.innerHTML = `
         <p><strong>Nombre:</strong> ${name}</p>
@@ -48,6 +52,7 @@ const ValidarRecueri =()=>{
         <p><strong>Teléfono:</strong> ${telefono}</p>
     `;
 }
+//iniciar las validaciones con el click al boton
 const btnEnviar = document.querySelector("#btnEnviar");
 btnEnviar.addEventListener('click', () =>{
     ValidarRecueri()
