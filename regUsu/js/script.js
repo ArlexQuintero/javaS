@@ -1,4 +1,5 @@
 const ValidarRecueri =()=>{
+
     // traemos los datos del html
     const name = document.querySelector("#name").value.trim();
     const email = document.querySelector("#email").value.trim();
@@ -9,8 +10,9 @@ const ValidarRecueri =()=>{
     const result = document.querySelector("#result");
 
     //iniciamos los mensajes para mostrar resultados
-    message.innerHTML = "";
+    message.textContent = "";
     result.innerHTML = "";
+    message.style.color = "";
 
     //instaseamos las validadciones 
     let regexNombre = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
@@ -20,38 +22,42 @@ const ValidarRecueri =()=>{
 
     //validar con lo que trae el html
     if (name === "" || email === "" || telefono ==="" || password ===""){
-        message.innerHTML = "❎Error: Todos los campos son obligatorios";
-        
+        message.textContent = "❎Error: Todos los campos son obligatorios";
+        message.style.color = "red";
         return;
     } 
     if(!regexNombre.test(name)){
-        message.innerHTML = "❎Error: El nombre debe de solo tener letras"
-        
+        message.textContent = "❎Error: El nombre debe de solo tener letras";
+        message.style.color = "red";
         return;
     }
     if(!regexCorreo.test(email)){
-        message.innerHTML = "❎Error: El correo no esta en un formato valido"
-        
+        message.textContent = "❎Error: El correo no esta en un formato valido";
+        message.style.color = "red";
         return;
     }
     if(!regexTelefono.test(telefono)){
-        message.innerHTML = "❎Error: El telefono solo debe de tener 10 digitos numericos"
-        
+        message.textContent = "❎Error: El telefono solo debe de tener 10 digitos numericos";
+        message.style.color = "red";
         return;
     }
     if(!regexPassword.test(password)){
-        message.innerHTML = "❎Error: La contraseña deve de tener 8 caracteres y almenos un numero"
-        
+        message.textContent = "❎Error: La contraseña deve de tener 8 caracteres y almenos un numero";
+        message.style.color = "red";
         return;
     }
+
     //si todo esta correcto mostrar este mensaje 
-    message.innerHTML = "✅ Registro exitoso";
+    message.textContent = "✅ Registro exitoso";
+    message.style.color = "green";
+
     result.innerHTML = `
         <p><strong>Nombre:</strong> ${name}</p>
         <p><strong>Correo:</strong> ${email}</p>
         <p><strong>Teléfono:</strong> ${telefono}</p>
     `;
 }
+
 //iniciar las validaciones con el click al boton
 const btnEnviar = document.querySelector("#btnEnviar");
 btnEnviar.addEventListener('click', () =>{
