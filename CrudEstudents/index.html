@@ -4,61 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel Estudiantes</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="Style/style.css">
 </head>
-<body>
-    <header class="encabezado">
-        <h2>Gestión de Estudiantes</h2>
-        <button class="btn-rojo" onclick="window.location.href='login.html'">Cerrar Sesión</button>
+
+<body class="bg-light">
+
+    <!-- ENCABEZADO -->
+    <header class="bg-dark text-white p-3 d-flex justify-content-between align-items-center">
+        <h4 class="m-0">Gestión de Estudiantes</h4>
+        <button class="btn btn-danger" onclick="window.location.href='login.html'">Cerrar Sesión</button>
     </header>
 
-    <main>
-        <div class="formulario">
-            <input type="hidden" id="idEstudiante">
-            
-            <div class="campo">
-                <label>Nombre Completo:</label>
-                <input type="text" id="nombre" placeholder="Solo letras">
+    <main class="container mt-4">
+
+        <!-- FORMULARIO -->
+        <div class="card shadow-lg border-0 mb-4">
+
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Registro de Estudiantes</h5>
+    </div>
+
+    <div class="card-body">
+
+        <input type="hidden" id="idEstudiante">
+
+        <div class="row g-4">
+
+            <!-- Nombre -->
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Nombre Completo</label>
+                <div class="input-group">
+                    <span class="input-group-text">👤</span>
+                    <input type="text" id="nombre" class="form-control" placeholder="Ingrese nombre completo">
+                </div>
             </div>
 
-            <div class="campo">
-                <label>Correo Electrónico:</label>
-                <input type="email" id="correo" placeholder="correo@ejemplo.com">
+            <!-- Correo -->
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Correo Electrónico</label>
+                <div class="input-group">
+                    <span class="input-group-text">📧</span>
+                    <input type="email" id="correo" class="form-control" placeholder="correo@ejemplo.com">
+                </div>
             </div>
 
-            <div class="campo">
-                <label>WhatsApp:</label>
-                <input type="text" id="whatsapp" placeholder="10 dígitos">
+            <!-- WhatsApp -->
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">WhatsApp</label>
+                <div class="input-group">
+                    <span class="input-group-text">📱</span>
+                    <input type="text" id="whatsapp" class="form-control" placeholder="Número de WhatsApp">
+                </div>
             </div>
 
-            <div class="campo">
-                <label>Fecha de Nacimiento:</label>
-                <input type="date" id="fechaNacimiento">
+            <!-- Fecha -->
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Fecha de Nacimiento</label>
+                <div class="input-group">
+                    <span class="input-group-text">📅</span>
+                    <input type="date" id="fechaNacimiento" class="form-control">
+                </div>
             </div>
 
-            <div class="campo ancho-total">
-                <label>Observaciones (Opcional):</label>
-                <textarea id="observaciones" rows="2"></textarea>
+            <!-- Observaciones -->
+            <div class="col-12">
+                <label class="form-label fw-semibold">Observaciones</label>
+                <textarea id="observaciones" class="form-control" rows="3" placeholder="Observaciones adicionales..."></textarea>
             </div>
 
-            <button id="btnGuardar" class="btn-verde" onclick="guardarEstudiante()">Guardar Estudiante</button>
+            <!-- Botón -->
+            <div class="col-12 text-center">
+                <button id="btnGuardar" class="btn btn-success px-5 py-2 fw-bold" onclick="guardarEstudiante()">
+                    Guardar Estudiante
+                </button>
+            </div>
+
         </div>
 
-        <div class="tabla-contenedor">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>WhatsApp</th>
-                        <th>Edad</th>
-                        <th>Observaciones</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="tablaCuerpo"></tbody>
-            </table>
+    </div>
+
+</div>
         </div>
+
+        <!-- TABLA -->
+        <div class="card shadow">
+
+            <div class="card-header bg-secondary text-white">
+                Lista de Estudiantes
+            </div>
+
+            <div class="card-body">
+
+                <div class="table-responsive">
+
+                    <table class="table table-striped table-hover table-bordered align-middle">
+
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Nombre</th>
+                                <th>WhatsApp</th>
+                                <th>Edad</th>
+                                <th>Observaciones</th>
+                                <th class="text-center">Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tablaCuerpo"></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </main>
+
+    <!-- Exportaciones JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="Js/script.js"></script>
+
 </body>
 </html>

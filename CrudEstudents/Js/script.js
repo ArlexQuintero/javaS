@@ -70,7 +70,7 @@ if (cuerpo) {
         const cAcciones = document.createElement("td");
         
         const btnEdit = document.createElement("button");
-        btnEdit.textContent = "Editar";
+        btnEdit.textContent = "🖊️";
         btnEdit.onclick = function() {
             document.querySelector("#nombre").value = est.nombre;
             document.querySelector("#correo").value = est.correo;
@@ -81,7 +81,7 @@ if (cuerpo) {
         };
 
         const btnBorrar = document.createElement("button");
-        btnBorrar.textContent = "Borrar";
+        btnBorrar.textContent = "🚫";
         btnBorrar.onclick = function() {
             if(confirm("¿Eliminar?")) {
                 lista = lista.filter(e => e.id !== est.id);

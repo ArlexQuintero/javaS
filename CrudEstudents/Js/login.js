@@ -1,8 +1,7 @@
 // Usuarios almacenados
 const usuariosAcademia = [
-    { user: "admin", pass: "1234" },
-    { user: "profe", pass: "5678" },
-    { user: "diego", pass: "1357"}
+    { user: "admin", pass: "1033" },
+    { user: "profe", pass: "178143" }
 ];
 
 function validarAcceso() {
